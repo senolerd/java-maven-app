@@ -7,7 +7,7 @@ pipeline {
             agent {
                 docker {
                     // image 'docker.io/maven'
-                    image 'maven:3-eclipse-temurin-17'
+                    image 'docker.io/maven:3-eclipse-temurin-17'
                     // reuseNode true
                     args '--entrypoint=""'
                 }
