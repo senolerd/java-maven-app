@@ -20,7 +20,7 @@ pipeline {
         stage("AWS Cki for uploading image"){
             agent { 
                 docker { 
-                    image 'amazon/aws-cli' 
+                    image 'docker.io/amazon/aws-cli' 
                     args '--userns=keep-id'
                     reuseNode true
                 }
