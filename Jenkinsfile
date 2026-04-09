@@ -21,11 +21,11 @@ pipeline {
                 }
             }
             steps {
-                sh "ls -al"
-                // script {
-                //     gv.buildJar()
 
-                // }
+                script {
+                    // gv.buildJar()
+                    sh "ls -al"
+                }
             }
         }
 
