@@ -18,6 +18,10 @@ pipeline {
             }
         }
         stage("AWS Cki for uploading image"){
+            environment {
+                AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY
+            }
             agent { 
                 docker { 
                     image 'docker.io/amazon/aws-cli' 
@@ -28,7 +32,11 @@ pipeline {
 
             steps{
                 echo "AWS CLI VERSION"
-                sh 'aws --version'                
+                withCredentials([usernamePassword(credentialsId: 'aws-cred-admin', passwordVariable: 'AWS_ACCESS_KEY_ID', usernameVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    env.AWS_ACCESS_KEY_ID = $AWS_ACCESS_KEY_ID
+                    env.AWS_SECRET_ACCESS_KEY = $AWS_SECRET_ACCESS_KEY
+                    sh 'aws s3 ls'                    
+                }
 
             }
         }       
