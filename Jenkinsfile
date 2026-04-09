@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     docker.image('docker.io/maven:3-eclipse-temurin-17').inside {
-                        sh "mvn package"
+                        sh 'mvn package'
                     }
                 }
                 // script {
