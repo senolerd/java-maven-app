@@ -9,7 +9,7 @@ pipeline {
                     image 'docker.io/maven'
                     // image 'docker.io/maven:3-eclipse-temurin-17'
                     reuseNode true
-                    args '--userns=keep-id'
+                    args '--userns=keep-id --entrypoint=""'
                 }
             }
             steps {
@@ -21,7 +21,7 @@ pipeline {
             agent { 
                 docker { 
                     image 'docker.io/amazon/aws-cli' 
-                    args '--userns=keep-id'
+                    args '--userns=keep-id --entrypoint=""'
                     reuseNode true
                 }
             }
@@ -29,6 +29,7 @@ pipeline {
             steps{
                 echo "AWS CLI VERSION"
                 sh 'aws --version'                
+
             }
         }       
     }
