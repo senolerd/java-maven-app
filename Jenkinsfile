@@ -13,9 +13,7 @@ pipeline {
                 }
             }
             steps {
-                script {
-                    sh 'mvn package'
-                }
+                sh 'mvn package'
                 // script {
                 //     // gv.buildJar()
                 //     sh "echo HELLO"
