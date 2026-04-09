@@ -9,7 +9,7 @@ pipeline {
                     // image 'docker.io/maven'
                     image 'docker.io/maven:3-eclipse-temurin-17'
                     // reuseNode true
-                    args '-userns=keep-id --entrypoint=""'
+                    args '--userns=keep-id --entrypoint=""'
                 }
             }
             steps {
