@@ -21,7 +21,7 @@ pipeline {
                 }
             }
             steps {
-                sh "mvn --version"
+                sh "ls -al"
                 // script {
                 //     gv.buildJar()
 
