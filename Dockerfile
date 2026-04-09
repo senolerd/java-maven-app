@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine-jdk
+FROM docker.io/amazoncorretto:17-alpine-jdk
 
 EXPOSE 8080
 
