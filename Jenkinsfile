@@ -18,7 +18,14 @@ pipeline {
             }
         }
         stage("AWS Cki for uploading image"){
-            agent { docker { 'image amazon/aws-cli' }}
+            agent { 
+                docker { 
+                    image 'amazon/aws-cli' 
+                    args '--userns=keep-id'
+                    resuableNode true
+                }
+            }
+
             steps{
                 echo "AWS CLI VERSION"
                 sh 'aws --version'                
