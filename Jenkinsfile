@@ -22,7 +22,7 @@ pipeline {
                 docker { 
                     image 'amazon/aws-cli' 
                     args '--userns=keep-id'
-                    resuableNode true
+                    reuseNode true
                 }
             }
 
