@@ -6,7 +6,8 @@ pipeline {
         stage("build jar") {
             agent {
                 docker {
-                    image 'docker.io/maven'
+                    // image 'docker.io/maven'
+                    image 'maven:3-eclipse-temurin-17'
                     // reuseNode true
                     args '--entrypoint=""'
                 }
