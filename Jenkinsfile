@@ -21,10 +21,10 @@ pipeline {
                 }
             }
             steps {
-
                 script {
                     // gv.buildJar()
-                    sh "ls -al"
+                    sh "echo HELLO"
+                    sh "mvn package"
                 }
             }
         }
