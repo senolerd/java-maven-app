@@ -7,7 +7,7 @@ pipeline {
             agent {
                 docker {
                     image 'docker.io/maven'
-                    reuseNode true
+                    // reuseNode true
                     args '--entrypoint=""'
                 }
             }
