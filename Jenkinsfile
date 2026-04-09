@@ -16,7 +16,7 @@ pipeline {
         stage("build jar") {
             agent {
                 docker {
-                    image docker.io/maven
+                    image 'docker.io/maven'
                     reuseNode true
                 }
             }
