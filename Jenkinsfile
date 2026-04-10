@@ -28,8 +28,8 @@ pipeline {
             }
             environment {
                 MY_CREDS = credentials('aws-cred-admin')
-                WS_SECRET_ACCESS_KEY=MY_CREDS_PSW
-                AWS_ACCESS_KEY_ID=$MY_CREDS_USR
+                WS_SECRET_ACCESS_KEY='$MY_CREDS_PSW'
+                AWS_ACCESS_KEY_ID='$MY_CREDS_USR'
             }
 
             steps{
