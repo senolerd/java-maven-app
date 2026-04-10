@@ -37,7 +37,7 @@ pipeline {
                 // export AWS_SECRET_ACCESS_KEY=MY_CREDS_PSW
                 // echo AWS_ACCESS_KEY_ID = $MY_CREDS_USR
                 echo env
-                sh 'aws s3 ls'                    
+                // sh 'aws s3 ls'                    
                 
 
             }
