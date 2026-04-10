@@ -1,4 +1,4 @@
-def say_hello(j){
+def say_hello(){
     echo "Helli"
 }
 return this

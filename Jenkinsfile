@@ -1,4 +1,4 @@
-def mylib
+def utils
 
 pipeline {   
     agent any
@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage ("__init__"){
             steps{
-                mylib = load 'utils.groovy'
-                mylib.say_hello(j)
+                utils = load "utils.groovy"
+                utils.say_hello()
             }
         }
 
