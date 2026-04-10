@@ -33,8 +33,8 @@ pipeline {
             steps{
                 echo "AWS CLI VERSION"
                 withCredentials([usernamePassword(credentialsId: 'aws-cred-admin', passwordVariable: 'AWS_ACCESS_KEY_ID', usernameVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                    echo '$AWS_ACCESS_KEY_ID'    
-                    echo '$AWS_SECRET_ACCESS_KEY'    
+                    echo "$AWS_ACCESS_KEY_ID"
+                    echo "$AWS_SECRET_ACCESS_KEY"
                     // sh 'aws s3 ls'                    
                 }
 
