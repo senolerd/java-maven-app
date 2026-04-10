@@ -6,8 +6,10 @@ pipeline {
     stages {
         stage ("__init__"){
             steps{
-                utils = load "utils.groovy"
-                utils.say_hello()
+                script{
+                    utils = load "utils.groovy"
+                    utils.say_hello()
+                }
             }
         }
 
