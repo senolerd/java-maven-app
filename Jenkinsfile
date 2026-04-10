@@ -46,6 +46,7 @@ pipeline {
                     withCredentials( [usernamePassword(credentialsId: 'aws-cred-admin', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID') ] ) {  
                         sh 'aws s3 ls'
                     }
+                    sh 'env'
                 }                    
             }
         }       
