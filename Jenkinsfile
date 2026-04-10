@@ -33,16 +33,9 @@ pipeline {
             steps{
                 script {
                     echo "AWS CLI VERSION"
-                    env.AWS_ACCESS_KEY_ID=$MY_CREDS_USR
-                    env.AWS_SECRET_ACCESS_KEY=$MY_CREDS_PSW
-                    // withCredentials([usernamePassword(credentialsId: 'aws-cred-admin', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {  }
-                    // export AWS_ACCESS_KEY_ID=$MY_CREDS_USR
-                    // export AWS_SECRET_ACCESS_KEY=MY_CREDS_PSW
-                    // echo AWS_ACCESS_KEY_ID = $MY_CREDS_USR
-                    sh 'env'
-                    echo "AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID"
-                    echo "AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY"
-                    sh 'aws s3 ls'
+                    withCredentials( [usernamePassword(credentialsId: 'aws-cred-admin', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID') ] ) {  
+                        sh 'aws s3 ls'
+                    }
                 }                    
             }
         }       
