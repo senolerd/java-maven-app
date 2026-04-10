@@ -35,8 +35,6 @@ pipeline {
                     echo "AWS CLI VERSION"
                     sh 'AWS_SECRET_ACCESS_KEY=$MY_CREDS_PSW'
                     sh 'AWS_ACCESS_KEY_ID=$MY_CREDS_USR'
-                    sh 'echo AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID'
-                    sh 'echo AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY'
                     // withCredentials([usernamePassword(credentialsId: 'aws-cred-admin', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {  }
                     // export AWS_ACCESS_KEY_ID=$MY_CREDS_USR
                     // export AWS_SECRET_ACCESS_KEY=MY_CREDS_PSW
