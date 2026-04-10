@@ -1,8 +1,13 @@
-// def gv
+def utils = load "utils.groovy"
 
 pipeline {   
     agent any
+
     stages {
+        stage ("__init__"){
+            utils.say_tello()
+        }
+
         stage("build jar") {
             agent {
                 docker {
