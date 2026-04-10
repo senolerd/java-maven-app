@@ -18,10 +18,7 @@ pipeline {
             }
         }
         stage("AWS Cki for uploading image"){
-            environment {
-                AWS_ACCESS_KEY_ID
-                AWS_SECRET_ACCESS_KEY
-            }
+
             agent { 
                 docker { 
                     image 'docker.io/amazon/aws-cli' 
