@@ -5,7 +5,9 @@ pipeline {
 
     stages {
         stage ("__init__"){
-            utils.say_tello()
+            steps{
+                utils.say_tello()
+            }
         }
 
         stage("build jar") {
