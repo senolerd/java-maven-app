@@ -1,4 +1,4 @@
-def utils = load "utils.groovy"
+def utils 
 
 pipeline {   
     agent any
@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage ("__init__"){
             steps{
-                utils.say_tello()
+                utils = load "utils.groovy"
+                utils.say_hello()
             }
         }
 
