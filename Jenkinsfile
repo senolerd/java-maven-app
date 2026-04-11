@@ -9,6 +9,7 @@ pipeline {
                 script{
                     utils = load "utils.groovy"
                     utils.say_hello()
+                    TEST_VAL = "42"
                 }
             }
         }
@@ -47,6 +48,8 @@ pipeline {
                         sh 'aws s3 ls'
                     }
                     sh 'env'
+                    echo "###############################"
+                    echo "$TEST_VAL"
                 }                    
             }
         }       
