@@ -49,7 +49,7 @@ pipeline {
                     }
                     sh 'env'
                     echo "###############################"
-                    echo "$env.TEST_VAL"
+                    echo "$TEST_VAL $TEST_VAL $TEST_VAL"
                 }                    
             }
         }       
