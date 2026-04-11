@@ -9,7 +9,7 @@ pipeline {
                 script{
                     utils = load "utils.groovy"
                     utils.say_hello()
-                    TEST_VAL = "42"
+                    env.TEST_VAL = "42"
                 }
             }
         }
@@ -49,7 +49,7 @@ pipeline {
                     }
                     sh 'env'
                     echo "###############################"
-                    echo "$TEST_VAL"
+                    echo "$env.TEST_VAL"
                 }                    
             }
         }       
